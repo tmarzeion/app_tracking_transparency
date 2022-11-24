@@ -1,20 +1,15 @@
 #import "PluginAttPlugin.h"
+#if __has_include(<app_tracking_transparency/plugin_att-Swift.h>)
+#import <app_tracking_transparency/plugin_att-Swift.h>
+#else
+// Support project import fallback if the generated compatibility header
+// is not copied when this plugin is created as a library.
+// https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
+#import "plugin_att-Swift.h"
+#endif
 
 @implementation PluginAttPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"plugin_att"
-            binaryMessenger:[registrar messenger]];
-  PluginAttPlugin* instance = [[PluginAttPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+  [SwiftPluginAttPlugin registerWithRegistrar:registrar];
 }
-
-- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([@"getPlatformVersion" isEqualToString:call.method]) {
-    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
-  } else {
-    result(FlutterMethodNotImplemented);
-  }
-}
-
 @end

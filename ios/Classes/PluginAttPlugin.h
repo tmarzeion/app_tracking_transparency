@@ -1,4 +1,4 @@
 #import <Flutter/Flutter.h>
 
-@interface PluginAttPlugin : NSObject<FlutterPlugin>
+@interface AppTrackingTransparencyPlugin : NSObject<FlutterPlugin>
 @end
