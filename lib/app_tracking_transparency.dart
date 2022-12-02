@@ -42,7 +42,7 @@ class AppTrackingTransparency {
   ///
   /// returns TrackingStatus.notSupported on Android
   static Future<TrackingStatus> get trackingAuthorizationStatus async {
-    if (defaultTargetPlatform == TargetPlatform.iOS) {
+    if (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS) {
       final int status =
           (await _channel.invokeMethod<int>('getTrackingAuthorizationStatus'))!;
       return TrackingStatus.values[status];
@@ -60,7 +60,7 @@ class AppTrackingTransparency {
   ///
   /// returns TrackingStatus.notSupported on Android
   static Future<TrackingStatus> requestTrackingAuthorization() async {
-    if (defaultTargetPlatform == TargetPlatform.iOS) {
+    if (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS) {
       final int status =
           (await _channel.invokeMethod<int>('requestTrackingAuthorization'))!;
       return TrackingStatus.values[status];

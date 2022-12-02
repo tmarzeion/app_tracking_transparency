@@ -1,0 +1,22 @@
+PODS:
+  - app_tracking_transparency (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+
+DEPENDENCIES:
+  - app_tracking_transparency (from `Flutter/ephemeral/.symlinks/plugins/app_tracking_transparency/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+
+EXTERNAL SOURCES:
+  app_tracking_transparency:
+    :path: Flutter/ephemeral/.symlinks/plugins/app_tracking_transparency/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+
+SPEC CHECKSUMS:
+  app_tracking_transparency: b1f81ebafc45ba6372bbb88360bedbc6c4c4a247
+  FlutterMacOS: ae6af50a8ea7d6103d888583d46bd8328a7e9811
+
+PODFILE CHECKSUM: c7161fcf45d4fd9025dc0f48a76d6e64e52f8176
+
+COCOAPODS: 1.11.3
